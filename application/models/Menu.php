@@ -6,8 +6,8 @@
  *
  * @author jim
  */
-class Menu extends CI_Model {
-
+class Menu extends CI_Model
+{
     protected $xml = null;
     protected $patties = array();
     protected $cheeses = array();
@@ -15,11 +15,13 @@ class Menu extends CI_Model {
     protected $sauces = array();
     
     // Constructor
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->xml = simplexml_load_file(DATAPATH . 'menu.xml');
 
-        foreach ($this->xml->patties->patty as $patty) {
+        foreach ($this->xml->patties->patty as $patty)
+        {
             $record = new stdClass();
             $record->code = (string) $patty['code'];
             $record->name = (string) $patty;
@@ -27,7 +29,8 @@ class Menu extends CI_Model {
             $this->patties[$record->code] = $record;
         }
         
-        foreach ($this->xml->cheeses->cheese as $cheese) {
+        foreach ($this->xml->cheeses->cheese as $cheese)
+        {
             $record = new stdClass();
             $record->code = (string) $cheese['code'];
             $record->name = (string) $cheese;
@@ -35,7 +38,8 @@ class Menu extends CI_Model {
             $this->cheeses[$record->code] = $record;
         }
         
-        foreach ($this->xml->toppings->topping as $topping) {
+        foreach ($this->xml->toppings->topping as $topping)
+        {
             $record = new stdClass();
             $record->code = (string) $topping['code'];
             $record->name = (string) $topping;
@@ -43,7 +47,8 @@ class Menu extends CI_Model {
             $this->toppings[$record->code] = $record;
         }
         
-        foreach ($this->xml->sauces->sauce as $sauce) {
+        foreach ($this->xml->sauces->sauce as $sauce)
+        {
             $record = new stdClass();
             $record->code = (string) $sauce['code'];
             $record->name = (string) $sauce;
@@ -52,7 +57,8 @@ class Menu extends CI_Model {
         }
     }
     
-    function getPatty($code) {
+    function getPatty($code)
+    {
         if (isset($this->patties[$code]))
         {
             return $this->patties[$code];
@@ -63,7 +69,8 @@ class Menu extends CI_Model {
         }
     }
     
-    function getCheese($code) {
+    function getCheese($code)
+    {
         if (isset($this->cheeses[$code]))
         {
             return $this->cheeses[$code];
@@ -74,7 +81,8 @@ class Menu extends CI_Model {
         }
     }
     
-    function getTopping($code) {
+    function getTopping($code)
+    {
         if (isset($this->toppings[$code]))
         {
             return $this->toppings[$code];
@@ -85,7 +93,8 @@ class Menu extends CI_Model {
         }
     }
     
-    function getSauce($code) {
+    function getSauce($code)
+    {
         if (isset($this->sauces[$code]))
         {
             return $this->sauces[$code];
