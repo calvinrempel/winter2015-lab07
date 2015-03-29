@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Jim wants a #8 for eat-in
+-->
+
+<!DOCTYPE order SYSTEM 'bonanza.dtd'>
+
+<order type="takeout">
+    <customer>Calvin</customer>
+    <burger>
+        <patty type="turkey"/>
+        <cheeses top="gruyere"/>
+        <topping type="shrooms"/>
+        <sauce type="ketchup"/>
+        <sauce type="mayo"/>
+    </burger>
+    <burger>
+        <patty type="beef"/>
+        <cheeses top="gruyere" bottom="american"/>
+        <topping type="shrooms"/>
+        <sauce type="mustard"/>
+        <sauce type="mayo"/>
+    </burger>
+</order>
