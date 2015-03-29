@@ -11,12 +11,12 @@
             <b>Cheese:</b> {cheese} <br />
             <b>Toppings:</b> {toppings} <br />
             <b>Sauces:</b> {sauces} <br />
-            <b>Cost:</b> {cost} <br /><br />
+            <b>Cost:</b> ${cost} <br /><br />
             <b>Instructions:</b> {instructions}<br />
     </div>
     {/burgers}
     
-    <b>Total:</b>
+    <b>Total: ${total}</b>
 </div>
 
 <div>
