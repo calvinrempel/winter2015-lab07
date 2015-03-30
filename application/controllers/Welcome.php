@@ -22,6 +22,7 @@ class Welcome extends Application {
     {
 	// Build a list of orders
         $this->load->helper('directory');
+        $this->load->model('order');
         $map = directory_map('data/', 1);
         $orders = array();
         
@@ -31,8 +32,11 @@ class Welcome extends Application {
             $fileparts = pathinfo($order);
             if ($fileparts['extension'] == 'xml' && $fileparts['basename'] != 'menu.xml')
             {
+                $this->order->loadFile(DATAPATH . $fileparts['basename']);
+                
                 $orders[] = array(
-                    'filename' => substr($fileparts['basename'], 0, strlen($fileparts['basename']) - 4)
+                    'filename' => substr($fileparts['basename'], 0, strlen($fileparts['basename']) - 4),
+                    'name' => $this->order->getCustomer()
                 );
             }
         }

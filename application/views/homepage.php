@@ -4,7 +4,7 @@
 
 {orders}
 <div class="row">
-    <a href="/welcome/order/{filename}">{filename}</a>
+    <a href="/welcome/order/{filename}">{filename} ({name})</a>
 </div>
 {/orders}
 
